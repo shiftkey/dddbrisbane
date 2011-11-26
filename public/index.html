@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		
+	<title>Windows 8 - Who Moved My Cheese?</title>
+	
+	<meta name="description" content="A jQuery library for modern HTML presentations" />
+	<meta name="author" content="Caleb Troughton" />
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="core/deck.core.css" />
+	<link rel="stylesheet" href="extensions/goto/deck.goto.css" />
+	<link rel="stylesheet" href="extensions/menu/deck.menu.css" />
+	<link rel="stylesheet" href="extensions/navigation/deck.navigation.css" />
+	<link rel="stylesheet" href="extensions/status/deck.status.css" />
+	<link rel="stylesheet" href="extensions/hash/deck.hash.css" />
+	
+	<link rel="stylesheet" href="themes/style/swiss.css"/>
+	<link rel="stylesheet" href="themes/transition/horizontal-slide.css" />
+	<link rel="stylesheet" href="introduction/introduction.css" />
+	
+	<script src="modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+	<section class="slide" id="title-slide">
+		<div class="title">
+			<h1>Windows 8</h1>
+			<br />
+			<h2>Who Moved My Cheese?</h2>
+		</div>
+		
+		<div class="logo">
+			<img src="images/ddd.png" />
+		</div>
+		
+		<div class="details">
+			<h3>Brendan Forster</h3>
+			<h4>Senior Developer, Readify</h4>
+			<h4>@shiftkey</h4>
+			<h4>#dddbrisbane #mix03</h4>
+		</div>
+		
+		<div class="sponsors">
+			<img src="images/qut.jpg" />
+			<img src="images/readify.png" />
+			<img src="images/ssw.png" />
+			<img src="images/yow.png" />
+			<img src="images/telerik.png" />
+			<img src="images/jetbrains.png" />
+		</div>
+		
+	</section>
+
+
+	<section class="slide photo">
+		<h2>Give Twitter a break</h2>
+
+		<ul>
+			<li>Discussion benefits everyone here</li>
+			<li>Slides will be online after talk</li>
+			<li>Screencasts on content for those who couldn't attend</li>
+			<li>Lunch is right after!</li>
+		</ul>
+
+		<img src="images/dead-twitter-bird.jpg" />
+
+		<p><a href="http://tinyurl.com/6gz7uuw">Source</a></p>
+	</section>
+
+	<section class="slide" id="about">
+		<h2>Topics</h2>
+		<ol>
+			<li class="slide">
+				<h3>How to start building an app!</h3>
+				<p>egad! not that HTML thing!</p>
+			</li>
+			<li class="slide">
+				<h3>New Windows Runtime Features</h3>
+				<p>ooooh! shiny!</p>
+			</li>
+			<li class="slide">
+				<h3>Tips and Tricks</h3>
+				<p>ninjas may or may not be on fire</p>
+			</li>
+		</ol>
+	</section>
+
+	<section class="slide photo">
+		<h2>recap</h2>
+
+		<img src="images/windows-overview-edit.png"
+		     title="after seeing this slide initially, i got very angry. fortunately some witty person pointed out it was 'markitecture' - the ugly step-child of marketing and architecture - and after that I mellowed a lot to it all" />
+
+		<p><a href="http://www.zdnet.com/blog/microsoft/heres-the-one-microsoft-windows-8-slide-that-everyone-wants-to-redo/10736">Source</a></p>
+	</section>
+
+	<section class="slide photo" >
+		<h2>recap</h2>
+
+		<img src="images/windows-runtime-better.png"
+			 title="this is a good overview of the windows runtime assemblies" />
+
+		<p><a href="http://www.zdnet.com/blog/microsoft/heres-the-one-microsoft-windows-8-slide-that-everyone-wants-to-redo/10736">Source</a></p>
+	</section>
+
+	<section class="slide photo">
+		<h2>Example App</h2>
+
+		<img src="images/dead-twitter-bird.jpg"
+			 title="that's right, another twitter app" />
+
+		<p><a href="http://tinyurl.com/6gz7uuw">Source</a></p>
+	</section>
+
+
+	<section class="slide">
+		<h2>Application Features</h2>	
+		<ul>
+			<li>Display some tweets</li>
+			<li>Authenticate user</li>
+			<li>Store application data</li>
+			<li>Select an image to set as profile image</li>
+			<li>Get the user's location</li>
+			<li>Tile notifications when someone mentions you</li>
+			<li>Integrate Twitter Search into the desktop</li>
+			<li>Share something on Twitter</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>User Interface</h2>	
+		<ul>
+			<li><h3>XAML</h3>
+				<ul><li>for those with strong XAML/C# skills</li></ul>
+			</li>
+			<li><h3>HTML</h3>
+				<ul><li>for those with strong HTML/JS skills</li></ul>
+			</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>User Interface</h2>
+
+		<h4>Common to XAML and HTML</h4>
+		<ul>
+			<li>Visual Studio for development</li>
+			<li>Expression Blend for design (only HTML in Win8 Developer Preview)</li>
+			<li>Windows Runtime APIs</li>
+			<li>Application Manifest file to declare application metadata</li>
+		</ul>
+	</section>
+
+	<section class="slide project">
+		<h2>XAML</h2>
+
+		<h4>Project Structure</h4>
+		<ul>
+			<li><strong>App.xaml</strong> entry point for application</li>
+			<li>Project Templates include sample layouts and styles</li>
+		</ul>
+
+		<table>
+			<tr>
+				<td>
+					<img src="images/xaml-projectstructure.png" />
+				</td>
+				<td>
+					<img src="images/xaml-projectstructure2.png" />
+				</td>
+			</tr>
+		</table>
+	</section>
+
+	<section class="slide">
+		<h2>XAML</h2>
+
+		<h4>Adding logic - the fast way!</h4>
+		<ol>
+			<li>Hook into events raise to load and cleanup</li>
+			<li>Add behaviour to the code-behind file</li>
+		</ol>
+
+		<pre><code>&lt;UserControl x:Class="MyApplication.CollectionPage"
+    <strong>Loaded="Page_Loaded" Unloaded="Page_Unloaded"</strong>
+    mc:Ignorable="d"
+    d:DesignHeight="768" d:DesignWidth="1366"&gt;
+		</code></pre>
+
+	<div class="slide">
+	<pre><code>private void Page_Loaded(object sender, RoutedEventArgs e)
+{
+    // attach handlers
+    // set default view state
+}
+
+private void Page_Unloaded(object sender, RoutedEventArgs e)
+{
+    // detach handlers
+}</code></pre>
+	</div>
+	</section>
+
+	<section class="slide">
+		<h2>XAML</h2>
+
+		<h4>Navigating to another page</h4>
+
+		<ul>
+			<li>Define a Frame in XAML</li>
+		</ul>
+		<pre><code>&lt;UserControl x:Class="MyApplication.MainPage"
+	     ...
+	     &gt;
+    &lt;Frame <strong>Source="MyApplication.SomePage"</strong>&gt;
+        &lt;Frame.ContentTransitions&gt;
+            &lt;TransitionCollection&gt;
+                &lt;-- slide the content in 200px when it changes --&gt;
+                <strong>&lt;EntranceThemeTransition FromHorizontalOffset="200" /&gt;</strong>
+            &lt;/TransitionCollection&gt;
+        &lt;/Frame.ContentTransitions&gt;
+    &lt;/Frame&gt;
+&lt;/UserControl&gt;</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>XAML</h2>
+
+		<h4>Navigating to another page</h4>
+
+		<ul>
+			<li>Create a Page matching that type</li>
+		</ul>
+		<pre><code>&lt;Page <strong>x:Class="MyApplication.SomePage"</strong>
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+    &lt;TextBlock Text="Hello World" FontSize="50"/&gt;
+&lt;/Page&gt;</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>XAML</h2>
+
+		<h4>Navigating to another page</h4>
+
+		<ul>
+			<li>Project templates use static methods in <strong>App</strong> to change whole page</li>
+			<li>Replaces entire window instead of region</li>
+			<li>Application to maintain journal of pages</li>
+		</ul>
+
+<div class="slide">
+		<pre><code>protected override void OnLaunched(LaunchActivatedEventArgs args)
+{
+    ShowCollection();
+    <strong>Window.Current.Activate();</strong>
+}
+
+public static void ShowCollection()
+{
+    var page = new CollectionPage();
+    // setup data
+    <strong>Window.Current.Content = page;</strong>
+}</code></pre>
+</div>
+	</section>
+
+	<section class="slide project">
+		<h2>HTML</h2>
+
+		<h4>Project Structure</h4>
+
+		<ul>
+			<li><strong>default.html</strong> entry point for application</li>
+			<li>CSS for light and dark themes included</li>
+			<li>Additional JS files for WinJS features</li>
+		</ul>
+
+		<table>
+			<tr>
+				<td>
+					<img src="images/html-projectstructure.png" />
+				</td>
+				<td>
+					<img src="images/html-projectstructure2.png" />
+				</td>
+			</tr>
+		</table>
+	</section>
+
+	<section class="slide">
+		<h2>HTML</h2>	
+
+		<h4>Document Structure</h4>
+			
+		<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;My Application&lt;/title&gt;
+    &lt;link rel="stylesheet" href="<strong>/winjs/css/ui-light.css</strong>" /&gt;
+    &lt;script type="ms-deferred/javascript" src="<strong>/winjs/js/base.js</strong>"&gt;&lt;/script&gt;
+    &lt;!-- other WinJS files --&gt;
+    &lt;link rel="stylesheet" href="/css/default.css" /&gt;
+    &lt;!-- other stylesheets --&gt;
+    &lt;script type="<strong>ms-deferred/javascript</strong>" src="/js/default.js"&gt;&lt;/script&gt;
+    &lt;!-- other scripts --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    <strong>&lt;!-- layout here --&gt;</strong>
+&lt;/body&gt;
+&lt;/html&gt;</pre></code>
+		
+	</section>
+
+	<section class="slide">
+		<h2>"ms-deferred/javascript"?</h2>
+
+		<h4>What?</h4>
+		
+		<div class="slide">
+			<ul>
+				<li>ensure a script is only loaded once</li>
+				<li>used when composing layouts in a WWA (Windows Web Application)</li>
+				<li><strong>fragments</strong> use this to manage resources</li>
+				<li>... more on this later</li>
+			</ul>
+		</div>
+
+				
+				
+			</ul>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>HTML</h2>
+
+		<h4>Layout</h4>
+		<ul>
+			<li><strong>aria-*</strong> attributes to support accessibility</li>
+			<!-- 
+				aria-live="assertive" 
+				- indicate how screen reader should handle updates
+				aria-atomic="true" 
+				- present region as a whole, even if only part of the region changes
+			-->
+			<li><strong>data-win-control</strong> to specify the control type of control
+			<li><strong>data-win-options</strong> to set properties
+		</ul>
+
+		<pre><code>&lt;body&gt;
+    &lt;div class="splitPage fragment"&gt;
+        &lt;header role="banner" <strong>aria-label="Header content"</strong>&gt;
+            &lt;button disabled class="win-backbutton" aria-label="Back"&gt;&lt;/button&gt;
+            &lt;h1 class="pageTitle win-title"&gt;&lt;/h1&gt;
+        &lt;/header&gt;
+        &lt;section class="itemListSection"&gt;
+            &lt;div class="itemList" 
+                 <strong>data-win-control="WinJS.UI.ListView"</strong>
+                 <strong>data-win-options="{layout: {type: WinJS.UI.ListLayout}, selectionMode: 'none' }"</strong>&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>HTML</h2>
+
+		<h4>Templating</h4>
+		<ul>
+			<li>Set <strong>data-win-control</strong> attribute to hide it in the DOM
+			<li>Use <strong>data-win-bind</strong> to declare binding expressions
+			<li>Bind fields on object to DOM properties
+		</ul>
+
+		<pre><code>&lt;div class="itemTemplate" 
+     <strong>data-win-control="WinJS.Binding.Template"</strong>&gt;
+    &lt;div class="largeIconTextTemplate"&gt;
+        &lt;img class="avatar" 
+             <strong>data-win-bind="src: user.profile_image_url"</strong> /&gt;
+        &lt;div class="largeIconTextTemplateBackground"&gt;
+            &lt;div class="largeIconTextTemplateLargeText" 
+                 <strong>data-win-bind="textContent: user.screen_name"</strong>&gt;
+            &lt;/div&gt;
+            &lt;div class="largeIconTextTemplateMediumText"
+                 <strong>data-win-bind="textContent: text"</strong>&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>HTML</h2>
+		
+		<h4>Templating</h4>
+		<ul>
+			<li>Find the list</li>
+			<li>Set the template and data source</li>
+			<li>Refresh the list</li>
+		</ul>
+
+	<div class="slide">
+	<pre><code>var lv = WinJS.UI.getControl(<strong>elements.querySelector('.itemList')</strong>);
+    WinJS.UI.setOptions(lv, {
+        dataSource: pageData.menuItems,
+        itemRenderer: <strong>elements.querySelector('.itemTemplate')</strong>,
+        oniteminvoked: menuItemInvoked
+    });
+<strong>lv.refresh();</strong></code></pre>
+	</div>
+
+	</section>
+
+	<section class="slide">
+		<h2>HTML</h2>
+		
+		<h4>Templating</h4>
+		<ul>
+			<li>Animate the inclusion of an item</li>
+		</ul>
+
+		<div class="slide">
+		<pre><code>var list = document.querySelector(".itemList"); 
+var allItems = document.querySelectorAll(".item"); 
+ 
+var newItem = document.createElement("div"); 
+newItem.className = "item"; 
+newItem.style.background = randomColor(); 
+ 
+<strong>var anim = WinJS.UI.Animation.createAddToListAnimation(newItem, allItems);</strong>
+ 
+list.insertBefore(newItem, list.firstChild); 
+         
+anim.execute(); </code></pre>
+</div>
+	</section>
+
+	<section class="slide">
+		<h2>HTML</h2>
+
+		<h4>Navigation</h4>
+
+		<ul>
+			<li>App raises <strong>fragmentappended</strong> event when content is rendered</li>
+			<li>Attach callback to run setup code</li>
+		</ul>
+
+	<div class="slide">
+		<pre><code>WinJS.Application.addEventListener('fragmentappended', function handler(e) {
+    if (e.location === <strong>'/html/splitPage.html'</strong>) { 
+    	fragmentLoad(e.fragment, e.state); 
+    }
+});
+
+function fragmentLoad(elements, options) {
+    // attach listeners for layout changes
+
+    <strong>WinJS.UI.processAll(elements)</strong>
+        .then(function () {
+
+        // attach event handlers
+        // bind data
+        // other stuff
+    });
+}</pre></code>
+	</div>
+	</section>
+
+	<section class="slide">
+		<h2>HTML</h2>
+
+		<h4>Navigation</h4>
+
+		<ul>
+			<li>Clone the fragment from a URL</li>
+			<li>Find the element to host the fragement</li>
+			<li>Raise the <strong>fragementappended</strong> event</li>
+		</ul>
+
+		<div class="slide">
+			<pre><code>function loadPage(location, state) {
+    <strong>WinJS.UI.Fragments.clone(location, state)</strong>.then(function (frag) {
+
+        var content = document.getElementById("content");
+        content.innerHTML = "";
+        content.appendChild(frag);
+
+        <strong>WinJS.Application.queueEvent</strong>({
+            type: "fragmentappended", 
+            location: location, 
+            fragment: content, 
+            state: state
+        });
+    });
+}</pre></code>
+		</div>
+		
+	</section>
+
+	<section class="slide">
+		<h2>HTML</h2>
+
+		<h4>Navigation</h4>
+
+		<ul>
+			<li>Start the navigation when the window activates</li>
+		</ul>
+
+		<div class="slide">
+			<pre><code>WinJS.Application.onmainwindowactivated = function (e) {
+    if (e.detail.kind === Windows.ApplicationModel.Activation.ActivationKind.launch) {
+        <strong>loadPage("/fragments/somePage.html");</strong>
+    }
+}</pre></code>
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>HTML</h2>
+
+		<h4>Navigate the page</h4>
+
+		<div style="font-size: 2.75em; top: 170px; position: absolute">
+&lt;a href="/html/somepage.html"&gt;
+	<br />
+	&nbsp;&nbsp;&nbsp;<strong>navigate all the things</strong>
+	<br />
+&lt;a&gt;
+		</div>
+	</section>
+
+	<section class="slide">
+		<h2>async and await</h2>
+
+		<h4>Why?</h4>
+
+		<ul>
+			<li class="slide">Synchronous code is easy to read</li>
+			<li class="slide">Writing good asynchronous is hard</li>
+			<li class="slide">Maintaining/debugging asynchronous code is painful</li>
+			<li class="slide">Task Parallel Library is full of win</li>
+			<li class="slide">Structure tasks into composable units of work</li>
+		</ul>
+	</section>
+
+		<section class="slide">
+		<h2>async and await</h2>
+
+		<h4>How?</h4>
+
+		<ol class="slide">
+			<li>use <strong>await</strong> in a method which is awaitable</li>
+			<li>decorate the method signature with <strong>async</strong></li>
+		</ol>
+
+		<ul class="slide">
+			<li>public <strong>async void</strong> MethodFinishesWhenever()</li>
+			<li>public <strong>async Task</strong> NoResultButWatchMethod()</li>
+			<li>public <strong>async Task&lt;T&gt;</strong> MethodWithResult()</li>
+		</ul>
+	</section>
+
+
+	<section class="slide">
+		<h2>network calls</h2>
+
+		<h4>C#</h4>
+
+		<pre><code>using System;
+using System.Net.Http;
+using Windows.Data.Json;
+
+public static <strong>async void</strong> Process(string url)
+{
+    var client = new HttpClient();
+    var response = <strong>await</strong> client.GetAsync(url);
+    var text = response.Content.<strong>ReadAsString</strong>();
+            
+    // convert to JSON
+}</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>network calls</h2>
+
+		<h4>JavaScript</h4>
+
+		<ul>
+			<li><strong>Promises</strong> are used to represent the pattern</li>
+			<li>Slightly different syntax</li>
+		</ul> 
+
+		<pre><code>WinJS.xhr({
+    type: "GET",
+    url: someTwitterUrl
+}).<strong>then</strong>(processResults);
+
+function processResults(data) {
+    var tweets = JSON.parse(data.response);
+
+    // massage JSON
+    // update UI
+}</code></pre>
+	</section>
+
+
+	<section class="slide">
+		<h2>oauth</h2>
+
+		<h4>Web Authentication Broker</h4>
+
+		<br />
+		<h5></h5>
+		<div class="slide">
+			<ul>
+				<li>Replaces in-app browser control</li>
+				<li>Compose URL with authentication info</li>
+				<li>Start authenticate process</li>
+				<li>Get result (success or failure)</li>
+			</ul>
+		</div>
+
+	</section>
+
+	<section class="slide">
+		<h2>oauth</h2>
+
+		<h4>C#</h4>
+
+		<pre><code>using System;
+using Windows.Security.Authentication.Web;
+
+public static <strong>async void</strong> Authenticate(string callback)
+{
+    var startURI = BuildOAuthUrl();
+    var endURI = new Uri(callback);
+
+    var auth = WebAuthenticationOptions.Default;
+    var result = <strong>await</strong> WebAuthenticationBroker.AuthenticateAsync(auth, startURI, endURI);
+
+    HandleCallback(result);
+}</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>oauth</h2>
+
+		<h4>JavaScript</h4>
+<pre><code>var startURI = new Windows.Foundation.Uri(twitterURL);
+var endURI = new Windows.Foundation.Uri(callbackURL);
+
+var auth = Windows.Security.Authentication.Web.WebAuthenticationOptions.default;
+asyncCall = Windows.Security.Authentication.Web.WebAuthenticationBroker
+            .authenticateAsync(auth, startURI, endURI)
+            .<strong>then</strong>(function (result) { handleAuthCallback(result, onSuccess, onFailure); },
+                  onFailure });</code></pre>
+
+	</section>
+
+	<section class="slide">
+		<h2>application storage</h2>
+
+		<div class="slide">
+			<h4>Locations</h4>
+			<ul>
+				<li>Local - on device</li>
+				<li>Roaming - uses Live ID to sync with cloud</li>
+			</ul>
+		</div>
+
+		<div class="slide">
+			<h4>Choices</h4>
+			<ul>
+				<li>Key-value settings</li>
+				<li>Composite objects</li>
+				<li>Streams</li>
+				<li>Listen to data changed events</li>
+			</ul>
+		</div>
+	
+	</section>
+
+	<section class="slide">
+		<h2>application storage</h2>
+
+		<h4>C#</h4>
+
+		<pre><code>var settings = Windows.Storage.ApplicationData.Current.LocalSettings.Values;
+
+// add a value
+settings.Add("oAuthTokenClient", oauthToken);
+
+// find a value (returns false if not found)
+object token;
+var success = settings.TryGetValue("oAuthTokenClient", out token);
+
+// remove from collection
+settings.Remove("oAuthTokenClient");
+</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>application storage</h2>
+
+		<h4>JavaScript</h4>
+
+		<pre><code>var settings = Windows.Storage.ApplicationData.current.localSettings.values;
+
+// add a value
+settings.insert("oAuthTokenClient", oauth_token);
+
+// find a value (returns null if not found)
+var oauth_token_secret = settings.lookup("oAuthTokenClient");
+
+// remove from collection
+settings.remove("oAuthTokenClient");
+</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>application storage</h2>
+
+		<h4>JavaScript</h4>
+
+		<pre><code>var composite = new Windows.Storage.ApplicationDataCompositeValue();
+composite["foo"] = "bar"; // composite.foo = "bar";
+composite["abc"] = 1;
+
+var roamingSettings = Windows.Storage.ApplicationData.current.roamingSettings;
+roamingSettings.values["someKey"] = composite;
+</code></pre>
+	</section>
+
+
+	<section class="slide project">
+		<h2>file picker</h2>
+
+		<table  style="text-align:center">
+			<tr>
+				<td>
+						<h4>New Metro Shell -> Rewritten File Dialog</h4>
+					<img src="images/filepickerui.png"  width="900"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="images/montypythongod.jpg" style="margin: 0 auto;" width="300" alt="Course it's a good idea!" />
+					<h4>$deity be praised!</h4>
+				</td>
+			</tr>
+		</table>
+	</section>
+
+
+	<section class="slide">
+		<h2>file picker</h2>
+
+		<h4>C#</h4>
+
+		<pre><code>public static async void ProcessImages()
+{
+    var picker = new FileOpenPicker();
+    picker.FileTypeFilter.Add(".jpg");
+    picker.FileTypeFilter.Add(".jpeg");
+    picker.FileTypeFilter.Add(".png");
+    picker.ViewMode = PickerViewMode.Thumbnail;
+
+    var file = await picker.PickSingleFileAsync(); // PickMultipleFilesAsync is also available
+    var details = await file.OpenForReadAsync();
+    var stream = details.AsStream();
+}</code></pre>
+
+	</section>
+
+
+	<section class="slide">
+		<h2>file picker</h2>
+
+		<h4>JavaScript</h4>
+		<pre><code>var picker = new Windows.Storage.Pickers.FileOpenPicker();
+picker.viewMode = Windows.Storage.Pickers.PickerViewMode.thumbnail;
+// if you want to put the user at a specific folder initially
+picker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.picturesLibrary;
+picker.fileTypeFilter.replaceAll([".png", ".jpg", ".jpeg"]);
+                
+openPicker.pickSingleFileAsync().then(function (file) {
+    if (file) {
+        // we have a file
+    } else {
+        // we do not
+    }
+});</code></pre>
+	</section>
+
+
+	<section class="slide">
+		<h2>geolocation</h2>
+
+		<ul>
+			<li>for tablets which have supported hardware</li>
+			<li>can query or listen for position changes</li>
+			<li>application must specify <strong>capability</strong> (like WP7 development)</li>
+		</ul>
+	</section>
+
+
+	<section class="slide">
+		<h2>geolocation</h2>
+
+		<h4>C#</h4>
+		<pre><code><strong>using Windows.Devices.Geolocation;</strong>
+
+Geolocator locator;
+public static void Start()
+{
+    locator = new Geolocator();
+    locator.PositionChanged += positionChanged;
+}
+
+void positionChanged(<strong>Geolocator sender, PositionChangedEventArgs args</strong>)
+{
+    // get the location
+    var lat = args.Position.Coordinate.Latitude;
+    var long = args.Position.Coordinate.Longitude;
+
+    // get the address associated with this location
+    var city = args.Position.CivicAddress.City;
+    var state = args.Position.CivicAddress.State;
+}
+</code></pre>
+	</section>
+
+
+	<section class="slide">
+
+	<h2>JavaScript</h2>
+
+<pre><code>var loc = null;
+function listen() {
+    if (!loc) {
+        loc = new Windows.Devices.Geolocation.Geolocator();
+    }
+    if (loc) {
+        <strong>loc.addEventListener("positionchanged", onPositionChanged);</strong>
+    } else {
+        console.log("Couldn't create Geolocator.");
+    }
+}
+
+function stop() {
+    if (loc) {
+        loc.removeEventListener("positionchanged", onPositionChanged);
+        loc = null;
+    }
+}
+    
+function onPositionChanged(args) {
+    var pos = args.position;
+}</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>geolocation</h2>
+
+		<h4>JavaScript</h4>
+		<pre><code>function getLocation() {
+    var locator = new Windows.Devices.Geolocation.Geolocator();
+        
+    if (locator) {
+        <strong>locator.getGeopositionAsync().then(positionChanged);</strong>
+    } else {
+        console.log("Couldn't create Geolocator.");
+    }
+}
+
+function positionChanged(pos) {
+    if (pos) {
+        var newLocation = pos.coordinate;
+    }        
+}</code></pre>
+	</section>
+
+	<section class="slide project">
+		<h2>tile notifications</h2>
+
+		<h4>Tile Options</h4>
+
+		<ul class="slide">
+			<li>Size - <strong>small logo</strong> or <strong>wide logo</strong></li>
+			<li>Specify graphics in application manifest</li>
+			<li>User can shrink your wide logo at will</li>
+		</ul>
+
+		<table>
+			<tr>
+				<td>
+					<img src="images/tile-shrink.png" />
+				</td>
+				<td>
+					<img src="images/arrow.png" />
+				</td>
+				<td>
+					<img src="images/tile-small.png" />
+				</td>
+			</tr>
+		</table>
+
+	</section>
+
+	<section class="slide project">
+		<h2>tile notifications</h2>
+
+		<h4>Tile Options</h4>
+
+		<ul>
+			<li>Configuration options for that tile</li>
+		</ul>
+
+		<table>
+			<tr>
+				<td>
+					<img src="images/example-settings.png" />
+				</td>
+			</tr>
+		</table>
+
+	</section>
+
+	<section class="slide project">
+		<h2>tile notifications</h2>
+
+		<h4>Glyphs</h4>
+
+		<ul>
+			<li>Icon in bottom right of tile</li>
+			<li>Background matches font colour</li>
+			<li>Can be a number or from set of OS graphics</li>
+		</ul>
+
+		<table>
+			<tr>
+				<td>
+					<img src="images/glyph-count.png" />
+				</td>
+				<td>
+					<img src="images/glyph-play.png" />
+				</td>
+			</tr>
+		</table>
+	</section>
+
+	<section class="slide">
+		<h2>tile notifications</h2>
+		
+		<h4>Create a glyph using C#</h4>
+
+		<ul>
+			<li>Get template from OS</li>
+			<li>Customise (yay, XML)</li>
+			<li>Send to <strong>BadgeUpdateManager</strong></li>
+		</ul>
+
+<div class="slide">
+		<pre><code>void UpdateBadgeWithNumber(int number)
+{
+    // can use BadgeTemplateType.BadgeGlyph for icons instead
+    XmlDocument badgeXml = <strong>BadgeUpdateManager.GetTemplateContent(BadgeTemplateType.BadgeNumber);</strong>
+
+    // omitted: inject values into XML
+    // example of customised XML: 
+    // <strong>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;badge value="play" version="1"/&gt;</strong>
+    
+    // create and fire async
+    var badge = new <strong>BadgeNotification</strong>(badgeXml);
+    <strong>BadgeUpdateManager.CreateBadgeUpdaterForApplication().Update(badge);</strong>
+}</code></pre>
+</div>
+	</section>
+
+	<section class="slide">
+
+		<h2>tile notifications</h2>
+
+		<h4>Templates</h4>
+
+		  <ul>
+			  <li>Custom toast notifications when user is outside app</li>
+			  <li>Include text and images</li>
+			  <li>Lots of different examples (see Advanced</li>
+	      </ul>
+
+		<img src="images/templates.png" />
+
+	</section>
+
+	<section class="slide">
+
+		<h2>tile notifications</h2>
+
+		<h4>Template Types</h4>
+
+		  <ul>
+			  <li>TileSquareImage</li>
+			  <li>TileWideImageCollection</li>
+			  <li>TileWideImageAndText</li>
+			  <li>TileWideImage</li>
+			  <li>TileWidePeekImageAndText</li>
+			  <li>TileWidePeekImageCollection01</li>
+			  <li>TileWidePeekImageCollection02</li>
+			  <li>TileWidePeekImageCollection03</li>
+			  <li>TileWidePeekImageCollection04</li>
+			  <li>TileWidePeekImageCollection05</li>
+			  <li>TileWidePeekImageCollection06</li>
+			  <li>TileWidePeekImage01</li>
+			  <li>TileWidePeekImage02</li>
+			  <li>TileWidePeekImage03</li>
+			  <li>TileWidePeekImage04</li>
+			  <li>TileWidePeekImage05</li>
+			  <li>TileWidePeekImage06</li>
+			  <li>TileWideSmallImageAndText01</li>
+			  <li>TileWideSmallImageAndText02</li>
+			  <li>TileWideSmallImageAndText03</li>
+			  <li>TileWideSmallImageAndText04</li>
+			  <li>TileWideText01</li>
+			  <li>TileWideText02</li>
+			  <li>TileWideText03</li>
+			  <li>TileWideText04</li>
+			  <li>TileWideText05</li>
+			  <li>TileWideText06</li>
+			  <li>TileWideText07</li>
+			  <li>TileWideText08</li>
+			  <li>TileWideText09</li>
+		</ul>
+	</section>
+
+<section class="slide">
+		<h2>tile notifications</h2>
+		
+		<h4>Using a Template Type in C#</h4>
+
+		<pre><code>void UpdateTileWithText(string text)
+{
+    var tileXml = TileUpdateManager.GetTemplateContent(<strong>TileTemplateType.TileWideText03</strong>);
+
+    XmlNodeList textElements = tileXml.GetElementsByTagName("text");
+    textElements.Item(0).AppendChild(tileXml.CreateTextNode(text));
+
+    var tile = new <strong>TileNotification</strong>(tileXml);
+
+    <strong>TileUpdateManager.CreateTileUpdaterForApplication().Update(tile);</strong>
+}</code></pre>
+	</section>
+	
+	<section class="slide">
+		<h2>search</h2>
+
+		<ul>
+			<li>APIs to enable developers to expose search to the OS</li>
+			<li>One entry point for users</li>
+		</ul>
+
+		<img src="images/search-os.png" />
+
+	</section>
+
+	<section class="slide">
+		<h2>search</h2>
+
+		<ul>
+			<li>Up to application to define user interface</li>
+		</ul>
+
+		<img src="images/search.png" />
+	</section>
+
+
+	<section class="slide">
+		<h2>search contract</h2>
+
+		<h4>C#</h4>
+
+		<ul>
+			<li>Override the <strong>OnSearchActivated</strong> method in App.xaml.cs</li>
+			<li>SearchResultsPage handles activation and search logic</li>
+		</ul>
+
+		<pre><code>partial class App
+{
+    // other code 
+
+    protected override void OnSearchActivated(SearchActivatedEventArgs args)
+    {
+        var searchResultsPage = new SearchResultsPage();
+        searchResultsPage.Activate(args);
+    }
+}</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>search contract</h2>
+
+		<h4>Javascript</h4>
+
+		<ul>
+			<li>Check how the application is activated</li>
+			<li>Navigate to the search page</li>
+		</ul>
+
+		<pre><code>function activated(e) {
+    if (e.kind === Windows.ApplicationModel.Activation.ActivationKind.search) {
+        WinJS.Navigation.navigate('/search.html', { queryText: e.queryText });
+    }
+}
+
+Windows.UI.WebUI.WebUIApplication.addEventListener('activated', activated);</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>search contract</h2>
+
+		<h4>Javascript</h4>
+
+		<ul>
+			<li>Sometimes the app may not be running</li>
+			<li>Need to listen to <strong>querysubmitted</strong> event as well</li>
+		</ul>
+
+		<pre><code>try {
+    var pane = Windows.ApplicationModel.Search.SearchPane.getForCurrentView();
+    <strong>pane.addEventListener('querysubmitted', querySubmitted, false);</strong>
+} catch (e) { }
+
+// If the application is not running when a query is received, navigate to the search page.
+function querySubmitted(e) {
+    if (WinJS.Navigation.location !== searchPage) {
+        WinJS.Navigation.navigate(searchPage, e);
+    } else {
+        handleQuery(document.body, e);
+    }
+}
+
+function handleQuery(elements, e) {
+    // use e.queryText and perform search
+}</code></pre>
+	</section>
+
+	<section class="slide">
+		<h2>sharing</h2>
+
+		<h4>how?</h4>
+
+		<ul>
+			<li>Application can be a source or a target</li>
+			<li><strong>Source</strong> specifies the data</li>
+			<li><strong>Target</strong> receives the data </li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>sharing</h2>
+
+		<h4>what?</h4>
+
+		<ul>
+			<li>Bitmap</li>
+        	<li>Html</li>
+        	<li>Rtf</li>
+            <li>StorageItems (collection of files)</li>
+            <li>Text</li>
+            <li>Uri</li>
+			<li>...extensible (hint: magic strings)</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>sharing</h2>
+
+		<h4>source share contract in C#</h4>
+
+		<ul>
+			<li>Listen to the DataTransferManager instance</li>
+			<li>Prompt the user to share</li>
+			<li>Populate the Data object with something to share</li>
+		</ul>
+
+		<div class="slide">
+		<pre><code>using Windows.ApplicationModel.DataTransfer;
+
+public void MainPage_Loaded()
+{
+    var manager = DataTransferManager.GetForCurrentView();
+    manager.DataRequested += DataRequested;
+}
+
+void DataRequested(DataTransferManager sender, DataRequestedEventArgs e)
+{
+    <strong>e.Request.Data.SetText(someImportantTweet);</strong>
+}
+
+void PromptUserToShare(object sender, RoutedEventArgs e)
+{
+    // user can also select <strong>Share</strong> from the app bar to view this dialog
+    <strong>DataTransferManager.ShowShareUI();</strong>
+}</code></pre>
+	</div>
+	</section>
+
+	<section class="slide">
+		<h2>sharing</h2>
+
+		<h4>target share contract in C#</h4>
+
+		<ul><li>Override method in App.xaml.cs</li></ul>
+
+		<div class="slide">
+		<pre><code>protected override void OnSharingTargetActivated(ShareTargetActivatedEventArgs args)
+{
+    var data = args.shareOperation.Data;
+    bool containsTextFormat;
+    // check what format is included
+    data.Contains(StandardDataFormats.Text, out containsTextFormat);
+
+    if (containsTextFormat) 
+    {
+        // handle the ShareOperation content
+        var title = data.Properties.Title;
+        var desc = data.Properties.Description;
+        var msg = data.GetText();
+        // TODO: other stuff
+    }
+}</code></pre>
+</div>
+	</section>
+
+	<section class="slide">
+		<h2>things i had to skip</h2>
+
+		<ul>
+			<li>Windows Metadata - projecting libraries to target C++, C# and JS</li>
+			<li>Background Tasks</li>
+			<li>Touch - raw input and controls (think Surface/WPF4)</li>
+			<li>Layout Changes - Snapped vs Filled vs Fullscreen</li>
+			<li>Orientation, Resolution Changes</li>
+			<li>Socket Programming</li>
+			<li>Push Notifications</li>			
+			<li>Device Sensors APIs - Accelerometer, Gyro, Compasss, Light, Orientation</li>
+			<li>DirectX and Direct 3D</li>
+			<li>Windows Store</li>
+			<li>Mobile Network APIs</li>
+			<li>SMS APIs</li>
+			<li>MVVM</li>
+			<li>...</li>
+		</ul>
+	</section>
+
+
+	<section class="slide" id="fin">
+		<h2>fin</h2>
+
+    	<h3>Slides (TODO): <a href="http://github.org/shiftkey/dddbrisbane">github.com/shiftkey/dddbrisbane</a></h3>
+		<h3>Presentation: <a href="http://ddd-windows8.heroku.com">ddd-windows8.heroku.com</a></h3>
+		<br />
+		<br />
+		<h3>Other Links</h3>
+		<h3><a href="http://dev.windows.com">Getting Started</a></h3>
+		<h3><a href="http://msdn.microsoft.com/en-us/windows/apps/br229516/">Download Win8 Dev Preview</a></h3>
+		<h3><a href="http://code.msdn.microsoft.com/windowsapps/Windows-Developer-Preview-6b53adbb">Download Win8 Samples</a></h3>
+		<h3><a href="http://channel9.msdn.com/Events/Build/Build2011">Watch BUILD videos</a></h3>
+		<br />
+		<br />
+		<h3>questions?</h3>		
+		<h3>beer?</h3>		
+	</section>
+
+	<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+	<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+	<p class="deck-status">
+		<span class="deck-status-current"></span>
+		/
+		<span class="deck-status-total"></span>
+	</p>
+
+	<form action="." method="get" class="goto-form">
+		<label for="goto-slide">Go to slide:</label>
+		<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+		<datalist id="goto-datalist"></datalist>
+		<input type="submit" value="Go">
+	</form>
+
+	<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+	<script src="jquery-1.7.min.js"></script>
+
+	<script src="core/deck.core.js"></script>
+	<script src="extensions/hash/deck.hash.js"></script>
+	<script src="extensions/menu/deck.menu.js"></script>
+	<script src="extensions/goto/deck.goto.js"></script>
+	<script src="extensions/status/deck.status.js"></script>
+	<script src="extensions/navigation/deck.navigation.js"></script>
+
+	<script src="introduction/introduction.js"></script>
+
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-8441214-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+</body>
+</html>

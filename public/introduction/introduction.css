@@ -1,0 +1,147 @@
+.deck-container .theme-menu {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  bottom: 10px;
+  left: 10px;
+  height: 20px;
+  line-height: 20px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fff;
+  font-family: sans-serif;
+  color: #888;
+}
+.js .deck-container .theme-menu {
+  display: block;
+}
+.deck-container .theme-menu h2 {
+  float: left;
+  font-size: 20px;
+  border: 0;
+  padding: 5px 10px;
+  margin: 0;
+  height: 20px;
+  position: relative;
+  top: -5px;
+  left: -5px;
+  background: #ccc;
+  color: #444;
+  text-shadow: none;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.deck-container .theme-menu label {
+  float: left;
+  display: block;
+  font-size: 12px;
+  vertical-align: baseline;
+  margin: 0 4px 0 15px;
+}
+.deck-container .theme-menu select {
+  float: left;
+  display: block;
+  font-size: 14px;
+}
+
+@media print {
+  .theme-menu {
+    display: none !important;
+  }
+}
+
+#title-slide h2 {
+    -moz-transform: translate(0pt, -50%);
+    left: 0;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 60%;
+}
+
+#about ol li p {
+  font-style: italic;
+}
+
+.photo p
+{
+  text-align: center;
+  font-size: 14px;
+}
+
+.csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide {
+    padding: 0;
+}
+
+.deck-container  {
+   padding: 0;
+   width: 90%;
+}
+
+.deck-container section {
+   padding: 0 48px;
+}
+
+#fin
+{
+	background: url('../images/beer.jpg') no-repeat bottom right;
+}
+
+#title-slide .logo
+{
+	position: absolute;
+	left: 1%;
+}
+
+#title-slide .details
+{
+	position: absolute;
+	right: 1%;
+	text-align: right;
+}
+
+
+#title-slide .sponsors
+{
+  max-width: 800px; 
+	position: absolute;
+	bottom: 1%;
+	left: 50%;
+  margin-left: -400px;
+}
+
+#title-slide .sponsors img
+{
+  max-height: 70px;
+	display:inline-block; 
+	margin: 4px;
+	vertical-align: middle;
+}
+
+.deck-container .slide code {
+  color: #222222;
+  font-size: 16px;
+}
+
+.slide ul
+{
+  margin-bottom: 0.5em;
+}
+
+.project table {
+  margin: 0 auto;
+}
+
+.project table img {
+  margin:5px;
+}
+
+.slide pre code strong
+{
+  font-weight: bolder;
+
+}
